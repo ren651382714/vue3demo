@@ -1,26 +1,51 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+	<div v-if="$route.name=='Logo'">
+		<keep-alive>
+			<router-view />
+		</keep-alive>
+	</div>
+	<div v-if="$route.name !== 'Logo'">
+		<Head/>
+		<keep-alive>
+			<router-view />
+		</keep-alive>
+		<Footer/>
+	</div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	import Head from '@/components/head.vue'
+	import Footer from '@/components/footer.vue'
+	
+	export default {
+		name: 'Home',
+		components: {
+			Head,Footer
+		}
+	}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+	body{
+		margin: 0;
+	}
+	#app {
+		font-family: Avenir, Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;
+	}
+
+	#nav {
+		padding: 30px;
+	}
+
+	#nav a {
+		font-weight: bold;
+		color: #2c3e50;
+	}
+
+	#nav a.router-link-exact-active {
+		color: #42b983;
+	}
 </style>
