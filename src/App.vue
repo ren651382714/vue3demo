@@ -1,5 +1,5 @@
 <template>
-	<div v-if="$route.name=='Logo'">
+	<div v-if="$route.name =='Logo'">
 		<keep-alive>
 			<router-view />
 		</keep-alive>
