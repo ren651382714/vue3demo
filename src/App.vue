@@ -4,7 +4,14 @@
 			<router-view />
 		</keep-alive>
 	</div>
-	<div v-if="$route.name !== 'Logo'">
+	<div v-if="$route.name == 'Home'">
+		
+		<keep-alive>
+			<router-view />
+		</keep-alive>
+		<Footer/>
+	</div>
+	<div v-if="$route.name !== 'Home'">
 		<Head/>
 		<keep-alive>
 			<router-view />
@@ -17,7 +24,7 @@
 	import Footer from '@/components/footer.vue'
 	
 	export default {
-		name: 'Home',
+		name: 'App',
 		components: {
 			Head,Footer
 		}
