@@ -56,7 +56,14 @@
 					</van-count-down>
 					<p>查看更多></p>
 				</div>
-				<div></div>
+				<div class="r_miaosha_two">
+					<ul>
+						<li v-for="list in state.mslist" :key="list.text">
+							<img :src="list.img">
+							<p>{{list.jg}}</p>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</van-pull-refresh>
@@ -231,11 +238,27 @@
 			display: flex;
 			background: #fff;
 			border-radius: 10px;
+			flex-direction: column;
 			.r_miaosha_one{
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 				width: 100%;
+			}
+			.r_miaosha_two{
+				width: 100%;
+				ul{
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					li{
+						flex: 1;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+					}
+				}
 			}
 		}
 		.red{
