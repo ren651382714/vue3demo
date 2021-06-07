@@ -17,15 +17,7 @@ function gaid(){
 		!(async () => {
 			console.group('%c浜笢鍏ㄦ皯钀ヤ笟鑴氭湰', 'color:#009a61; font-size: 36px; font-weight: 400');
 			console.group('%c浣滆€呬俊鎭�', 'color:blue; font-size: 36px; font-weight: 250');
-			console.log('%c鏈彃浠朵粎渚涘涔犱氦娴佷娇鐢╘n浣滆€�:灏忚丹浣珺yQQ83802712 \n鑱旂郴浣滆€� tencent://message/?uin=83802712&Menu=yes',
-				'color:#009a61');
-			console.log('%c浣滆€呭崥瀹�:http://blog.tyh52.com', 'color:#009a61');
-			console.log('%c瀛︿範浜ゆ祦缇わ細333736660\n娌′簨涓嶇敤杩涚兢锛岄噷闈㈠叏鏄偦閫�(闄や簡缇や富)\nhttps://jq.qq.com/?_wv=1027&k=Mes9sRIc',
-				'color:#009a61');
-			console.log('%c璐墿浼樻儬缇わ細32412734\n杩欎釜鍙互杩涚兢锛岀瑷€缇わ紝鏀寔涓€涓媆nhttps://jq.qq.com/?_wv=1027&k=yB4utzbU',
-				'color:#009a61');
-			console.log('%c灏忚丹浣伄浜笢鑻忓畞绁炰环灞嬶細53810353\n绂佽█缇わ紝鍙戜含涓滆嫃瀹佹紡娲炲崟\nhttps://jq.qq.com/?_wv=1027&k=TdNX4f50',
-				'color:#009a61');
+			
 			console.groupEnd();
 			console.log(
 				"褰撳墠娲诲姩鍦板潃锛歨https://wbbny.m.jd.com/babelDiy/Zeus/2s7hhSTbhMgxpGoa9JDnbDzJTaBB/index.html#/home");

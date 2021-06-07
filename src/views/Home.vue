@@ -44,26 +44,43 @@
 			<div class="r_miaosha warp">
 				<div class="r_miaosha_one">
 					<p>{{state.miaosha}}</p>
-					<p class="red">{{state.mslist.length}}</p>
-					<van-count-down :time="state.time" >
+					<p class="red">{{state.mslist.length + state.frid_item.length}}</p>
+					<van-count-down :time="state.time" :format="state.times">
 						<template #default="timeData">
-							<span class="block" format="hh">{{ timeData.hours }}</span>
+							<span class="block">{{ timeData.hours }}</span>
 							<span class="colon">:</span>
-							<span class="block" format="mm">{{ timeData.minutes }}</span>
+							<span class="block">{{ timeData.minutes }}</span>
 							<span class="colon">:</span>
-							<span class="block" format="ss">{{ timeData.seconds }}</span>
+							<span class="block">{{ timeData.seconds }}</span>
 						</template>
 					</van-count-down>
 					<p>查看更多></p>
 				</div>
-				<div class="r_miaosha_two">
-					<ul>
-						<li v-for="list in state.mslist" :key="list.text">
-							<img :src="list.img">
-							<p>{{list.jg}}</p>
-						</li>
-					</ul>
-				</div>
+				<van-swipe >
+					<van-swipe-item>
+						<div class="r_miaosha_two">
+							<ul>
+								<li v-for="list in state.mslist" :key="list.text">
+									<img :src="list.img" class="r_miaosha_two_img">
+									<p>${{list.jg}}</p>
+									<del>${{list.yj}}</del>
+								</li>
+							</ul>
+						</div>
+					</van-swipe-item>
+					<van-swipe-item>
+						<div class="r_miaosha_two">
+							<ul>
+								<li v-for="list in state.mslist" :key="list.text">
+									<img :src="list.img" class="r_miaosha_two_img">
+									<p>${{list.jg}}</p>
+									<del>${{list.yj}}</del>
+								</li>
+							</ul>
+						</div>
+					</van-swipe-item>
+				</van-swipe>
+				
 			</div>
 		</div>
 	</van-pull-refresh>
@@ -79,8 +96,9 @@
 			const state = reactive({
 				count: 0,
 				loading: false,
-				time:30*60*60*1000,
+				time:1*60*60*1000,
 				miaosha:'京东秒杀',
+				times:'HH:mm:ss',
 				frid_item:[
 					{id:1, icon:'home-o',text:'导购',to:'/'},
 					{id:2,icon:'search',text:'生活',to:'/logo'},
@@ -257,6 +275,14 @@
 						flex-direction: column;
 						justify-content: center;
 						align-items: center;
+						p{
+							color: red;
+						}
+						.r_miaosha_two_img{
+							max-width: 100%;
+							height: auto;
+							display: block;
+						}
 					}
 				}
 			}

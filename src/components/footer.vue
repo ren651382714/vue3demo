@@ -33,6 +33,8 @@
 </script>
 
 <style lang="less" scoped>
-	
+	/deep/.van-tabbar{
+		z-index: 999;
+	}
 	
 </style>
